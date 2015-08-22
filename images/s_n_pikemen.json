@@ -1,0 +1,15 @@
+{
+  "images": ["images/s_n_pikemen.png"],
+  "frames": {
+    "width": 64,
+    "height": 128
+  },
+  "framerate": 16,
+  "animations": {
+    "idle": [0,7],
+    "walk": [8,15],
+    "dmg": [16,23],
+    "w_idle": [24,31],
+    "w_dmg": [32,39]
+  }
+}

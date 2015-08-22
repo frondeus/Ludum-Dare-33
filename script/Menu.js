@@ -13,7 +13,7 @@ Engine.Menu = {
     Engine.stage.addChild(message);
     Engine.stage.addChild(title);
 
-    for(var u = 0; u < 15; u++){
+    for(var u = 0; u < 5; u++){
       var unit = new createjs.Sprite(Engine.loader.getResult(Engine.randomArr(units)), "idle");
       unit.set({x: 156 + Engine.randomR(0,400), y: 156+ Engine.randomR(0,20), regX: 32});
 

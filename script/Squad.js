@@ -8,7 +8,7 @@ Engine.Squad = function(x,y,dir, type){
   this.x = x;
   this.y = y;
 
-  var side = dir===1?"positive":"negative";
+  var side = dir===-1?"positive":"negative";
 
   var data = Engine.loader.getResult("u_" + type);
   //console.log(data.type);
@@ -92,7 +92,8 @@ Engine.Squad.prototype = {
   },
 
   step: function(){
-    this.delay = 200;
+    this.delay = 1;
+    //this.delay = 200;
     if(this.canGoForward()) this.goForward();
     else this.doAction();
     createjs.Tween.get(this).wait(this.delay).call(this.step,null,this);
@@ -117,7 +118,7 @@ Engine.Squad.prototype = {
   addDamage: function(unit, enemy){
     if(!this.dmg) return;
     if(enemy && enemy.squad && this.dmg[enemy.squad.type]){
-      enemy.addDamage(this.dmg[enemy.squad.type]/ unit.wounded?2:1);
+      enemy.addDamage(this.dmg[enemy.squad.type]/ unit.wounded?16:1);
     }
 
   },
@@ -127,7 +128,7 @@ Engine.Squad.prototype = {
       unit.setAnim(unit.wounded?"w_idle":"idle");
       return;
     }
-    if(unit.wounded && Engine.randomB()) {
+    if(unit.wounded && Engine.randomZ(1,100) > 20) {
       unit.setAnim("w_idle");
       return;
     }
@@ -168,7 +169,7 @@ Engine.Squad.prototype = {
 
       unit.move(gX,unit.gridY);
     }
-    this.delay += 1000;
+    this.delay += 810;
   },
 
   canGoForward: function(){

@@ -8,17 +8,17 @@
     {"id": "u_pikemen", "src": "units/pikemen.json", "type": "json"},
     {"id": "s_projectiles", "src": "images/projectiles.json", "type": "spritesheet"},
     {"id": "s_ground", "src": "images/ground.json", "type": "spritesheet"},
-    {"id": "s_n_king", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_king", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_warrior", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_n_warrior", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_archer", "src": "images/s_n_archer.json", "type": "spritesheet"},
+    {"id": "s_n_king", "src": "images/s_n_king.json", "type": "spritesheet"},
+    {"id": "s_p_king", "src": "images/s_p_king.json", "type": "spritesheet"},
+    {"id": "s_p_warrior", "src": "images/s_p_warrior.json", "type": "spritesheet"},
+    {"id": "s_n_warrior", "src": "images/s_n_warrior.json", "type": "spritesheet"},
+    {"id": "s_p_archer", "src": "images/s_p_archer.json", "type": "spritesheet"},
     {"id": "s_n_archer", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_defender", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_n_defender", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_mount", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_n_mount", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_p_pikemen", "src": "images/s_n_archer.json", "type": "spritesheet"},
-    {"id": "s_n_pikemen", "src": "images/s_n_archer.json", "type": "spritesheet"}
+    {"id": "s_p_defender", "src": "images/s_p_defender.json", "type": "spritesheet"},
+    {"id": "s_n_defender", "src": "images/s_n_defender.json", "type": "spritesheet"},
+    {"id": "s_p_mount", "src": "images/s_p_mount.json", "type": "spritesheet"},
+    {"id": "s_n_mount", "src": "images/s_n_mount.json", "type": "spritesheet"},
+    {"id": "s_p_pikemen", "src": "images/s_p_pikemen.json", "type": "spritesheet"},
+    {"id": "s_n_pikemen", "src": "images/s_n_pikemen.json", "type": "spritesheet"}
   ]
 }

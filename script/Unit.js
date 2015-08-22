@@ -8,7 +8,7 @@ Engine.Unit = function(x,y,sprite ){
 
   this.set({regX: 32, regY: 128-32, formX: x, formY: y});
 
-  this.hp = 5;
+  this.hp = 25;
   this.wounded = false;
 }
 
@@ -45,7 +45,7 @@ Engine.Unit.prototype.move = function(nextX, nextY){
 
   createjs.Tween.get(this)
     .call(this.setAnim, ["walk"], this)
-    .to({x: (nextX-1) * Engine.Game.tileS + 32}, 1000)
+    .to({x: (nextX-1) * Engine.Game.tileS + 32}, 800)
     .call(this.setAnim, ["idle"], this)
     .call(function(x){
       if(Engine.Game.old[this.gridY-1][this.gridX-1] === this)
@@ -56,11 +56,20 @@ Engine.Unit.prototype.move = function(nextX, nextY){
       //EndMove
           if(this.gridX <= 0) {
         this.remove();        
-        Engine.Game.score[-1]++;
+        if(this.king && this.formX === 0 && this.formY === 0){
+          console.log("Game over");
+          Engine.reset(-this.squad.dir);
+        }
+        else
+          Engine.Game.addScore(-1);
       }
       else if(this.gridX > Engine.Game.mapW) {
         this.remove();
-        Engine.Game.score[1] ++;
+        if(this.king && this.formX === 0 && this.formY === 0){
+          console.log("Game over");
+          Engine.reset(-this.squad.dir);
+        }
+        else Engine.Game.addScore(1);
       }
 
     },[nextX],this);

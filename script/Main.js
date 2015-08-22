@@ -25,7 +25,7 @@ Engine.init = function(){
 
   this.state = null;
   this.loader.loadManifest("resources.json");
-  this.message = "Humans vs Demons!";
+  this.message = "Humans vs Demons by @frondeus!";
 };
 
 Engine.setState = function(state){
@@ -47,6 +47,8 @@ Engine.ready = function(){
 
 Engine.onKeyboard = function(evt){
   Engine.state.onKeyboard(evt);
+  evt.preventDefault();
+  evt.stopPropagation();
 };
 
 Engine.reset = function(dir){
