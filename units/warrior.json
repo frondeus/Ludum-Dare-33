@@ -1,0 +1,21 @@
+{
+  "type": "warrior",
+  "sprite": {
+    "positive": ["s_fajerman"],
+    "negative": ["s_fajerman"]
+  },
+  "formations": [
+    [[-1,0], [0,0], [1,0]],
+    [[-1,0], [0,0], [0,-1]],
+    [[0,-1], [0,0], [1,0]]
+  ],
+  "dmg": {
+    "king": 2,
+    "warrior": 2,
+    "archer": 4,
+    "defender": 1,
+    "mount": 1,
+    "pikemen": 3
+  },
+  "range": false
+}

@@ -1,0 +1,22 @@
+{
+  "type": "pikemen",
+  "sprite": {
+    "positive": ["s_fajerman"],
+    "negative": ["s_fajerman"]
+  },
+  "formations": [
+    [[0,0], [1,0], [0,1], [1,1]],
+    [[-1,0], [0,0], [1,0], [0,1]],
+    [[-1,0], [0,0], [1,0], [2,0]],
+    [[-1,0], [0,0], [1,0], [0,-1]]
+  ],
+  "dmg": {
+    "king": 1,
+    "warrior": 1,
+    "archer": 3,
+    "defender": 1,
+    "mount": 3,
+    "pikemen": 2
+  },
+  "range": false
+}

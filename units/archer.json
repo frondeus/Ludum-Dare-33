@@ -1,0 +1,25 @@
+{
+  "type": "archer",
+  "sprite": {
+    "positive": ["s_fajerman"],
+    "negative": ["s_fajerman"]
+  },
+  "formations": [
+    [[-1,0],[0,0],[1,0]],
+    [[-1,0],[0,0],[0,1]],
+    [[0,0],[1,0],[0,1]]
+  ],
+  "dmg": {
+    "king": 1,
+    "warrior": 2,
+    "archer": 2,
+    "defender": 0.25,
+    "mount": 2,
+    "pikemen": 2
+  },
+  "range": true,
+  "projectile": {
+    "positive": ["fajerball"],
+    "negative": ["fajerball"]
+  }
+}

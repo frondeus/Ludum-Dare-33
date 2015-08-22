@@ -1,0 +1,12 @@
+{
+  "manifest": [
+    {"id": "u_king", "src": "units/king.json", "type": "json"},
+    {"id": "u_warrior", "src": "units/warrior.json", "type": "json"},
+    {"id": "u_archer", "src": "units/archer.json", "type": "json"},
+    {"id": "u_defender", "src": "units/defender.json", "type": "json"},
+    {"id": "u_mount", "src": "units/mount.json", "type": "json"},
+    {"id": "u_pikemen", "src": "units/pikemen.json", "type": "json"},
+    {"id": "s_fajerman", "src": "images/fajerman.json", "type": "spritesheet"},
+    {"id": "s_projectiles", "src": "images/projectiles.json", "type": "spritesheet"}
+  ]
+}

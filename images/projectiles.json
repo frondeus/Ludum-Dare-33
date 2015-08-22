@@ -1,0 +1,11 @@
+{
+  "images": ["images/projectiles.png"],
+  "frames": {
+    "width": 64,
+    "height": 128
+  },
+  "framerate": 8,
+  "animations": {
+    "fajerbal": [0,3]
+  }
+}

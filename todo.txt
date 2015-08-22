@@ -1,0 +1,36 @@
+1. Zrobić sterowanie:
+//  * Pokazywać następny posiłek
+  * Warunki wygranej:
+    - Zabicie króla
+  * Proste AI
+    -  losowo dobieranie squadów u przeciwnika
+  * Grafiki i animacje:
+    * Positive
+      - Warrior
+      - Pikemen
+      - Mount
+      - Defender
+      - Archer
+      - King
+    * Negative
+      - Warrior
+      - Pikemen
+      - Mount
+      - Archer (1/2)
+      - King
+    * Projectiles
+      - Positive
+      - Negative
+    * Animations
+      - Idle
+      - Walk
+      - Attack
+      - Wounded
+      - Wounded Attack
+      // Fall
+      // Death
+    * Backgrounds
+      - Tiles
+      - Background
+  * Menu
+  * Muzyka i efekty dźwiękowe
