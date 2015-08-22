@@ -31,7 +31,7 @@ Engine.Squad = function(x,y,dir, type){
     }
     this.addUnit(unit);
     unit.king = this.type === "king";
-    unit.set({x: 66* (x + unit.formX - 1) + 32, y: 66 * (y + unit.formY - 1), scaleX: dir});
+    unit.set({x: Engine.Game.tileS* (x + unit.formX - 1) + 32, y: Engine.Game.tileS * (y + unit.formY - 1), scaleX: dir});
   }
 
   //this.setMouseInput();
@@ -45,7 +45,7 @@ Engine.Squad.prototype = {
   },
 
   removeUnit: function(unit){
-    Engine.board.removeChild(unit);
+    Engine.Game.board.removeChild(unit);
     var i = this.units.indexOf(unit);
     if(i > -1) this.units.splice(i,1);
   },
@@ -55,13 +55,13 @@ Engine.Squad.prototype = {
       var unit = this.units[u];
       var gX = unit.formX + x;
       var gY = unit.formY + y;
-      if(gX < 1 || gX > Engine.mapW
-         || gY < 1 || gY > Engine.mapH)
+      if(gX < 1 || gX > Engine.Game.mapW
+         || gY < 1 || gY > Engine.Game.mapH)
        return false;
 
-      var other = Engine.map[gY-1][gX-1];
+      var other = Engine.Game.map[gY-1][gX-1];
       if(other) return false;
-      other = Engine.old[gY-1][gX-1];
+      other = Engine.Game.old[gY-1][gX-1];
       if(other) return false;
     }
     return true;
@@ -72,13 +72,13 @@ Engine.Squad.prototype = {
     this.y = y;
       for(var u in this.units){
         var unit = this.units[u];
-        Engine.board.removeChild(unit);
-        Engine.board.addChild(unit);
+        Engine.Game.board.removeChild(unit);
+        Engine.Game.board.addChild(unit);
         unit.set({ gridX: x + unit.formX , gridY: y + unit.formY ,
-                 x: 66* (x + unit.formX -1) + 32, y: 66 * (y + unit.formY -1)});
+                 x: Engine.Game.tileS* (x + unit.formX -1) + 32, y: Engine.Game.tileS * (y + unit.formY -1)});
       }
       //SORT!:
-      Engine.board.sortChildren(function(a,b){
+      Engine.Game.board.sortChildren(function(a,b){
         return a.y - b.y;
       });
   },
@@ -101,11 +101,11 @@ Engine.Squad.prototype = {
   doAction: function(){
     for(var c in this.units){
       var unit = this.units[c];
-      var enemy = Engine.map[unit.gridY-1][unit.gridX+this.dir-1];
+      var enemy = Engine.Game.map[unit.gridY-1][unit.gridX+this.dir-1];
       if(enemy && enemy.squad.dir !== this.dir)
         this.attack(unit,enemy);
       else if(this.isRange){
-        enemy = Engine.map[unit.gridY-1][unit.gridX+this.dir+this.dir-1];
+        enemy = Engine.Game.map[unit.gridY-1][unit.gridX+this.dir+this.dir-1];
         if(enemy && enemy.squad.dir !== this.dir)
           this.attack(unit,enemy);
       }
@@ -139,14 +139,14 @@ Engine.Squad.prototype = {
       .call(function(x,y,ex,ey,dir){
         var projectile = new createjs.Sprite(Engine.loader.getResult("s_projectiles"),this.projectile);
         //projectile.set({regX: 32, regY: 32, scaleX: this.scaleX,x: x, y: y - 32});
-        Engine.board.addChild(projectile);
-        projectile.set({x: (x-1) * 66 + 32, y: (y-1) * 66 - 32, scaleX: dir, regX: 32, regY: 64});
+        Engine.Game.board.addChild(projectile);
+        projectile.set({x: (x-1) * Engine.Game.tileS + 32, y: (y-1) * Engine.Game.tileS - 32, scaleX: dir, regX: 32, regY: 64});
 
         createjs.Tween.get(projectile)
-        .to({x: (ex-1) * 66 + 32, y: (ey-1) * 66 - 32}, 200)
+        .to({x: (ex-1) * Engine.Game.tileS + 32, y: (ey-1) * Engine.Game.tileS - 32}, 200)
         .call(this.addDamage,[unit,enemy],this)
         .call(function(){
-          Engine.board.removeChild(this);
+          Engine.Game.board.removeChild(this);
         },null,projectile);
       },[unit.gridX,unit.gridY,enemy.gridX,enemy.gridY,this.dir],this);
     }
@@ -175,9 +175,9 @@ Engine.Squad.prototype = {
     for(var c in this.units){
       var unit = this.units[c];
       if(unit.wounded) return false;
-      var enemy = Engine.map[unit.gridY-1][unit.gridX+this.dir-1];
+      var enemy = Engine.Game.map[unit.gridY-1][unit.gridX+this.dir-1];
       if(enemy && enemy.squad && enemy.squad.id !== this.id) return false;
-      enemy = Engine.old[unit.gridY-1][unit.gridX+this.dir-1];
+      enemy = Engine.Game.old[unit.gridY-1][unit.gridX+this.dir-1];
       if(enemy && enemy.squad && enemy.squad.id !== this.id) return false;
     }
     return true;

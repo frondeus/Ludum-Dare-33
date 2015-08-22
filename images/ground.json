@@ -1,0 +1,12 @@
+{
+  "images": ["images/ground.png"],
+  "frames": {
+    "width": 64,
+    "height": 64
+  },
+  "framerate": 8,
+  "animations": {
+    "grass": [0,7],
+    "corupted": [8,15]
+  }
+}

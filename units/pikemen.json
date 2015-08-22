@@ -1,8 +1,8 @@
 {
   "type": "pikemen",
   "sprite": {
-    "positive": ["s_fajerman"],
-    "negative": ["s_fajerman"]
+    "positive": ["s_p_pikemen"],
+    "negative": ["s_n_pikemen"]
   },
   "formations": [
     [[0,0], [1,0], [0,1], [1,1]],

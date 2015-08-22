@@ -1,8 +1,8 @@
 {
   "type": "archer",
   "sprite": {
-    "positive": ["s_fajerman"],
-    "negative": ["s_fajerman"]
+    "positive": ["s_p_archer"],
+    "negative": ["s_n_archer"]
   },
   "formations": [
     [[-1,0],[0,0],[1,0]],

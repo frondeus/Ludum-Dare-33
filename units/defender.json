@@ -1,8 +1,8 @@
 {
   "type": "defender",
   "sprite": {
-    "positive": ["s_fajerman"],
-    "negative": ["s_fajerman"]
+    "positive": ["s_p_defender"],
+    "negative": ["s_n_defender"]
   },
   "formations": [
     [[0,0], [1,0]]

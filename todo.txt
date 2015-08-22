@@ -1,9 +1,5 @@
 1. Zrobić sterowanie:
 //  * Pokazywać następny posiłek
-  * Warunki wygranej:
-    - Zabicie króla
-  * Proste AI
-    -  losowo dobieranie squadów u przeciwnika
   * Grafiki i animacje:
     * Positive
       - Warrior
@@ -32,5 +28,4 @@
     * Backgrounds
       - Tiles
       - Background
-  * Menu
   * Muzyka i efekty dźwiękowe

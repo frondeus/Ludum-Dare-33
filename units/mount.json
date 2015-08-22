@@ -1,8 +1,8 @@
 {
   "type": "mount",
   "sprite": {
-    "positive": ["s_fajerman"],
-    "negative": ["s_fajerman"]
+    "positive": ["s_p_mount"],
+    "negative": ["s_n_mount"]
   },
   "formations": [
     [[-1,0], [0,0], [1,0], [0,1]],

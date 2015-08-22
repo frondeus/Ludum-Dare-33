@@ -1,8 +1,8 @@
 {
   "type": "king",
   "sprite": {
-    "positive": ["s_fajerman"],
-    "negative": ["s_fajerman"]
+    "positive": ["s_p_king"],
+    "negative": ["s_n_king"]
   },
   "formations": [
     [[0,0],[0,-1],[0,1],[-1,0],[1,0]]

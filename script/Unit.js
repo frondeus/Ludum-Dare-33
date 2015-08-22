@@ -13,13 +13,13 @@ Engine.Unit = function(x,y,sprite ){
 }
 
 Engine.Unit.prototype.remove = function(){
-    Engine.map[this.gridY-1][this.gridX-1] = null;
-    Engine.old[this.gridY-1][this.gridX-1] = null;
+    Engine.Game.map[this.gridY-1][this.gridX-1] = null;
+    Engine.Game.old[this.gridY-1][this.gridX-1] = null;
     this.squad.removeUnit(this);
     if(this.king){
       if(this.formX === 0 && this.formY === 0){
           console.log("Game over");
-          Engine.resetGame(this.squad.dir);
+          Engine.reset(this.squad.dir);
         }
       //console.log("King dead: " + this.formX + " " + this.formY);
     }
@@ -39,40 +39,40 @@ Engine.Unit.prototype.addDamage = function(dmg){
 Engine.Unit.prototype.move = function(nextX, nextY){
   //StartMove
   
-  if(Engine.map[this.gridY-1][this.gridX-1] === this)
-    Engine.map[this.gridY-1][this.gridX-1] = null;
-  Engine.map[nextY-1][nextX-1] = this;
+  if(Engine.Game.map[this.gridY-1][this.gridX-1] === this)
+    Engine.Game.map[this.gridY-1][this.gridX-1] = null;
+  Engine.Game.map[nextY-1][nextX-1] = this;
 
   createjs.Tween.get(this)
     .call(this.setAnim, ["walk"], this)
-    .to({x: (nextX-1) * 66 + 32}, 1000)
+    .to({x: (nextX-1) * Engine.Game.tileS + 32}, 1000)
     .call(this.setAnim, ["idle"], this)
     .call(function(x){
-      if(Engine.old[this.gridY-1][this.gridX-1] === this)
-        Engine.old[this.gridY-1][this.gridX-1] = null;
-      Engine.old[nextY-1][nextX-1] = this;
+      if(Engine.Game.old[this.gridY-1][this.gridX-1] === this)
+        Engine.Game.old[this.gridY-1][this.gridX-1] = null;
+      Engine.Game.old[nextY-1][nextX-1] = this;
       this.gridX = nextX;
       this.gridY = nextY;
       //EndMove
           if(this.gridX <= 0) {
         this.remove();        
-        Engine.score[-1]++;
+        Engine.Game.score[-1]++;
       }
-      else if(this.gridX > Engine.mapW) {
+      else if(this.gridX > Engine.Game.mapW) {
         this.remove();
-        Engine.score[1] ++;
+        Engine.Game.score[1] ++;
       }
 
     },[nextX],this);
 };
 
 Engine.Unit.prototype.setPos = function(x,y){
-  if(Engine.map[this.gridY-1][this.gridX-1] === this)
-    Engine.map[this.gridY-1][this.gridX-1] = null;
-  if(Engine.old[this.gridY-1][this.gridX-1] === this)
-    Engine.old[this.gridY-1][this.gridX-1] = null;
-  Engine.map[y-1][x-1] = this;
-  Engine.old[y-1][x-1] = this;
+  if(Engine.Game.map[this.gridY-1][this.gridX-1] === this)
+    Engine.Game.map[this.gridY-1][this.gridX-1] = null;
+  if(Engine.Game.old[this.gridY-1][this.gridX-1] === this)
+    Engine.Game.old[this.gridY-1][this.gridX-1] = null;
+  Engine.Game.map[y-1][x-1] = this;
+  Engine.Game.old[y-1][x-1] = this;
   this.gridX = x;
   this.gridY = y;
 };
