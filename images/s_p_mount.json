@@ -2,7 +2,9 @@
   "images": ["images/s_n_mount.png"],
   "frames": {
     "width": 64,
-    "height": 128
+    "height": 128,
+    "regX": 32,
+    "regY": 96
   },
   "framerate": 16,
   "animations": {

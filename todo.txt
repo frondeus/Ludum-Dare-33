@@ -1,31 +1,8 @@
-1. Zrobić sterowanie:
-//  * Pokazywać następny posiłek
-  * Grafiki i animacje:
-    * Positive
-      - Warrior
-      - Pikemen
-      - Mount
-      - Defender
-      - Archer
-      - King
-    * Negative
-      - Warrior
-      - Pikemen
-      - Mount
-      - Archer (1/2)
-      - King
-    * Projectiles
-      - Positive
-      - Negative
-    * Animations
-      - Idle
-      - Walk
-      - Attack
-      - Wounded
-      - Wounded Attack
-      // Fall
-      // Death
-    * Backgrounds
-      - Tiles
-      - Background
-  * Muzyka i efekty dźwiękowe
+King    Gold
+Warrior   Red
+Archer    Green
+Defender  Blue
+Mount     Brown
+Pikemen   Gray
+
+

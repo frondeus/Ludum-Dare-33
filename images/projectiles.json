@@ -2,7 +2,9 @@
   "images": ["images/projectiles.png"],
   "frames": {
     "width": 64,
-    "height": 128
+    "height": 128,
+    "regX": 32,
+    "regY": 96
   },
   "framerate": 8,
   "animations": {

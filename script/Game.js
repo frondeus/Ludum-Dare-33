@@ -8,7 +8,8 @@ Engine.Game = {
 
     this.currentSquad = [];
     this.nextSquad = [];
-    this.squadTypes = ["warrior", "archer", "defender", "mount", "pikemen"];
+    this.squadTypes = ["warrior"];
+    //this.squadTypes = ["warrior", "archer", "defender", "mount", "pikemen"];
 
     this.score = [];
     this.score[-1] = this.score[1] = 0;
@@ -36,18 +37,19 @@ Engine.Game = {
 
     this.mapW = 12;
     this.mapH = 7;
-    this.tileS = 64;
+    this.tileS = 256;
     this.map = [];
     this.old = [];
+    var scale = 0.20;
 
     this.grounds = ["grass","corupted"];
 
     this.ground = new createjs.Container();
-    this.ground.set({scaleX: 0.75, scaleY: 0.75, x:128, y: 64});
+    this.ground.set({scaleX: scale, scaleY: scale, x:128, y: 64});
     Engine.stage.addChild(this.ground);
 
     this.board = new createjs.Container();
-    this.board.set({scaleX: 0.75, scaleY: 0.75, x:128, y:64});
+    this.board.set({scaleX: scale, scaleY: scale, x:128, y:64});
     Engine.stage.addChild(this.board);
 
 
@@ -55,10 +57,10 @@ Engine.Game = {
       this.map[y] = [];
       this.old[y] = [];
       for(var x = 0; x < this.mapW; x++){
-        //var tile = new createjs.Shape();
-        //tile.graphics.beginFill("#ddd").drawRect(0,0,64,64);
         var tile = new createjs.Sprite(Engine.loader.getResult("s_ground"),Engine.randomArr(this.grounds));
         tile.set({x: x * Engine.Game.tileS, y: y * Engine.Game.tileS, gridX: x, gridY: y});
+        tile.scaleX = 4;
+        tile.scaleY = 4;
         this.ground.addChild(tile);
       }
     }

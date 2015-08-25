@@ -92,8 +92,8 @@ Engine.Squad.prototype = {
   },
 
   step: function(){
-    this.delay = 1;
-    //this.delay = 200;
+    //this.delay = 1;
+    this.delay = 200;
     if(this.canGoForward()) this.goForward();
     else this.doAction();
     createjs.Tween.get(this).wait(this.delay).call(this.step,null,this);

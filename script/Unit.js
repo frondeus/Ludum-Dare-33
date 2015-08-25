@@ -6,8 +6,11 @@ Engine.Unit = function(x,y,sprite ){
   this.addChild(this.body);
   this.addChild(this.gfx);
 
-  this.set({regX: 32, regY: 128-32, formX: x, formY: y});
+  var scale = Engine.randomB()?0.5:1;
+  this.set({formX: x, formY: y });
 
+  //this.scaleY = scale;
+  this.scaleX = scale;
   this.hp = 25;
   this.wounded = false;
 }

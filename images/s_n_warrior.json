@@ -1,8 +1,10 @@
 {
   "images": ["images/s_n_warrior.png"],
   "frames": {
-    "width": 64,
-    "height": 128
+    "width": 256,
+    "height": 256,
+    "regX": 128,
+    "regY": 192
   },
   "framerate": 16,
   "animations": {
