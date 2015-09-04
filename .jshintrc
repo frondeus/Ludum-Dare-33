@@ -16,7 +16,7 @@
     "dojo"          : false,
 
     "globals"        : {
-      "createjs": false,
+      "PIXI": false,
       "Engine": true
     },
 

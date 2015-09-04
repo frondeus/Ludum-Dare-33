@@ -1,8 +1,0 @@
-King    Gold
-Warrior   Red
-Archer    Green
-Defender  Blue
-Mount     Brown
-Pikemen   Gray
-
-

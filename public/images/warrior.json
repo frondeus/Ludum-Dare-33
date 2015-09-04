@@ -1,0 +1,19 @@
+{
+  "source": "warrior",
+  "frame_row": 8,
+  "frame_col": 6,
+  "scale_x": 0.5,
+  "scale_y": 0.5,
+  "pivot_x": 0.5,
+  "pivot_y": 1,
+
+  "animations": {
+    "idle": [[0,7],8],
+    "run": [[8,15],8],
+    "attack": [[16,23],8,"idle"],
+    "wounded": [[24,31],8],
+    "woundedAttack": [[32,39],8,"wounded"],
+    "death": [[40,47],8]
+  },
+  "default": "idle"
+}

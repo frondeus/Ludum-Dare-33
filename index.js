@@ -4,7 +4,7 @@ var http = require("http").Server(app);
 
 
 
-app.use(express.static("."));
+app.use(express.static("./public"));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "index.html");
